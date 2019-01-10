@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import NameTitle from './components/NameTitle.js';
+import ResumeUI from './components/ResumeUI';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NameTitle />
+        <ResumeUI />
       </div>
     );
   }
