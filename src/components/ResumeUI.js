@@ -8,9 +8,15 @@ import BlurbUI from './BlurbUI';
 
 const Wrapper = styled.section`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     padding: 1em;
+    background: white;
+  `;
+const BlurbAndSkills = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background: white;
   `;
 
@@ -23,15 +29,15 @@ export default class ResumeUI extends Component {
         <ContactUI />
       </Wrapper>
       <Wrapper>
+        <BlurbAndSkills>
         <BlurbUI />
-      </Wrapper>
-      <Wrapper>
+        <SkillsUI />
+        </BlurbAndSkills>
         <ExperienceUI />
       </Wrapper>
       <Wrapper>
-        <SkillsUI />
-      </Wrapper>
       <SubmitPDF />
+      </Wrapper>
       </div>
     );
   }

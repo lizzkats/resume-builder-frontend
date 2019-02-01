@@ -3,31 +3,35 @@ import styled from 'styled-components';
 
 const ChildWrapper = styled.section`
   background: white;
+  height: 10em;
+  width: 40em;
+  padding: 25px;
   `;
-  const ExperienceText = styled.textarea`
-      border: none;
-      font-size: 1em;
-      resize: none;
-      border: none;
-      overflow: hidden;
-      height: 20em;
-      width: 25em;
-      `;
+const ExperienceText = styled.textarea`
+  border: none;
+  font-size: 1em;
+  resize: none;
+  border: none;
+  overflow: hidden;
+  height: 10em;
+  width: 40em;
+  `;
 
-  const ExperienceTitle = styled.input`
-    color: black;
-    font-size: 1.5em;
-    border: none;
-  `
-  const ExperienceLocation = styled.input`
-    color: black;
-    font-size: 0.9em;
-    border: none;`
+const ExperienceTitle = styled.input`
+  color: black;
+  font-size: 1.5em;
+  border: none;
+  `;
+const ExperienceLocation = styled.input`
+  color: black;
+  font-size: 0.9em;
+  border: none;
+  `;
 
-  const Experience = styled.div`
-    height: 10em;
-    width: 15em;
-  `
+const Experience = styled.div`
+  height: 10em;
+  width: 15em;
+  `;
 
 export default class ExperienceUI extends Component {
   constructor(props){
@@ -59,9 +63,9 @@ export default class ExperienceUI extends Component {
   }
 
   render(){
-    return  <div>
-            <ChildWrapper>
+    return  <ChildWrapper>
             { this.state.experience.map( item => (
+            <ChildWrapper>
             <Experience key={item.id}>
               <ExperienceTitle
               name="title"
@@ -82,9 +86,9 @@ export default class ExperienceUI extends Component {
                 onChange={this.handleChange}
               />
               </Experience>
+              </ChildWrapper>
             ))
             }
             </ChildWrapper>
-            </div>
   }
 }

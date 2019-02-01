@@ -2,21 +2,27 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const ChildWrapper = styled.section`
+  display: inline-block;
   background: white;
+  width: 15em;
   `;
 const NameInput = styled.input`
+  display: block;
   border: none;
   font-size: 3em;
   `;
 const TitleInput = styled.input`
+  display: block;
   border: none;
   font-size: 2em;
   `;
 const Input = styled.input`
+  display: block;
   border: none;
   font-size: 2em;
   `;
   const H1 = styled.h1`
+  display: block;
     color: black;
     font-size: 1em;
   `
@@ -55,8 +61,8 @@ export default class ContactUI extends Component {
                 value={this.state.title}
                 onChange={this.handleChange}
               />
-            </ChildWrapper>
-            <ChildWrapper>
+              </ChildWrapper>
+              <ChildWrapper>
               <H1>See my work </H1>
               <Input
                 name="website"
