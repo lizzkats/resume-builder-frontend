@@ -1,43 +1,43 @@
 import React, { Component } from "react";
 import SubmitPDF from './SubmitPDF';
+import styled from 'styled-components';
+import ContactUI from './ContactUI';
+import ExperienceUI from './ExperienceUI';
+import SkillsUI from './SkillsUI';
+import BlurbUI from './BlurbUI';
+
+const Wrapper = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1em;
+    background: white;
+  `;
+const BlurbAndSkills = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: white;
+  `;
+
 
 export default class ResumeUI extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "Sheila",
-      title: "Web Designer",
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event){
-    const {name, value} = event.target
-    this.setState({
-      [name] : value
-    })
-  }
-
   render() {
     return (
       <div>
-        <input
-          name="name"
-          type="text"
-          value={this.state.name}
-          onChange={this.handleChange}
-          placeholder="Name"
-        />
-        <h1>{this.state.name}</h1>
-        <hr />
-        <input
-          name="title"
-          type="text"
-          value={this.state.title}
-          onChange={this.handleChange}
-          placeholder="Title"
-        />
-        <h2>{this.state.title}</h2>
-        <SubmitPDF name={this.state.name} title={this.state.title} />
+      <Wrapper>
+        <ContactUI />
+      </Wrapper>
+      <Wrapper>
+        <BlurbAndSkills>
+        <BlurbUI />
+        <SkillsUI />
+        </BlurbAndSkills>
+        <ExperienceUI />
+      </Wrapper>
+      <Wrapper>
+      <SubmitPDF />
+      </Wrapper>
       </div>
     );
   }

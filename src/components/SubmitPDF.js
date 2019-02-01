@@ -1,4 +1,16 @@
 import React from "react";
+import styled from 'styled-components';
+
+const Button = styled.button`
+  display: inline-block;
+  color: lightblue;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid lightblue;
+  border-radius: 3px;
+  display: block;
+`;
 
 export default class SubmitPDF extends React.Component {
   constructor(props) {
@@ -8,7 +20,7 @@ export default class SubmitPDF extends React.Component {
   }
 
   async createPDF(){
-    await fetch('http://localhost:3000/generatePDF', {
+    await fetch('http://resumetemplatebuilder-backend.herokuapp.com/generatePDF', {
       method: 'POST',
       mode: "cors",
       headers: {
@@ -25,7 +37,7 @@ export default class SubmitPDF extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.createPDF}>Create PDF</button>
+        <Button onClick={this.createPDF}>Create PDF</Button>
       </div>
     );
   }
