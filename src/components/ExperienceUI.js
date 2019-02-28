@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-const ChildWrapper = styled.section`
-  background: white;
-  height: 10em;
-  width: 40em;
-  padding: 25px;
-  `;
 const ExperienceText = styled.textarea`
   border: none;
   font-size: 1em;
@@ -28,11 +22,6 @@ const ExperienceLocation = styled.input`
   border: none;
   `;
 
-const Experience = styled.div`
-  height: 10em;
-  width: 15em;
-  `;
-
 export default class ExperienceUI extends Component {
   constructor(props){
     super(props)
@@ -49,7 +38,12 @@ export default class ExperienceUI extends Component {
         title:"UI Designer",
         location: "Scottsdale AZ",
         description: "Six Bricks is an educational app to help marketing professionals learn industry software Built additional features to allow users to track other users’ progress Worked from specifications handed off from design to create dynamic features Used Javascript, HTML, & CSS Used Plot.ly, a framework to help graph the user data Helped convert the features in order to make the app faster, more scalable, & reduce redundancy Converted Angular 1 frontend code to React.js The app originally used Java. Built a Node.js API to store user data in a more scalable way Wrote unit tests for the Node.js backend using Jasmine"
-        }
+      },
+      {id: 3,
+      title: "UI Residence",
+      location: "Oakland CA",
+      description:  "Engineer-in-residence during the final months of my immersive. Conducted initial interviews of prospective students. Coached students during in-person technical group sessions. Mentored new students"
+      }
       ]
     }
     this.handleChange = this.handleChange.bind(this);
@@ -63,10 +57,9 @@ export default class ExperienceUI extends Component {
   }
 
   render(){
-    return  <ChildWrapper>
+    return  <div>
             { this.state.experience.map( item => (
-            <ChildWrapper>
-            <Experience key={item.id}>
+            <div key={item.id}>
               <ExperienceTitle
               name="title"
               type="text"
@@ -85,10 +78,9 @@ export default class ExperienceUI extends Component {
                 value={item.description}
                 onChange={this.handleChange}
               />
-              </Experience>
-              </ChildWrapper>
+              </div>
             ))
             }
-            </ChildWrapper>
+            </div>
   }
 }
