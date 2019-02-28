@@ -1,43 +1,50 @@
 import React, { Component } from "react";
 import SubmitPDF from './SubmitPDF';
 import styled from 'styled-components';
-import ContactUI from './ContactUI';
+import NameTitle from './NameTitle';
+import Website from './Website';
+import Contact from './Contact';
 import ExperienceUI from './ExperienceUI';
 import SkillsUI from './SkillsUI';
 import BlurbUI from './BlurbUI';
 
 const Wrapper = styled.section`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 1em;
-    background: white;
-  `;
-const BlurbAndSkills = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 200px auto;
+    grid-template-columns: 300px 400px;
     background: white;
   `;
 
+const NameWrapper = styled.section`
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    background: white;
+  `;
+
+const ButtonWrapper = styled.section`
+    display: grid;
+    grid-template-columns: 30% auto;
+  `;
 
 export default class ResumeUI extends Component {
   render() {
     return (
       <div>
-      <Wrapper>
-        <ContactUI />
-      </Wrapper>
-      <Wrapper>
-        <BlurbAndSkills>
-        <BlurbUI />
-        <SkillsUI />
-        </BlurbAndSkills>
-        <ExperienceUI />
-      </Wrapper>
-      <Wrapper>
-      <SubmitPDF />
-      </Wrapper>
+        <NameWrapper>
+          <NameTitle/>
+          <Website />
+          <Contact />
+        </NameWrapper>
+        <Wrapper>
+          <BlurbUI />
+          <ExperienceUI />
+          <SkillsUI />
+        </Wrapper>
+        <ButtonWrapper>
+          <SubmitPDF />
+        </ButtonWrapper>
       </div>
     );
   }

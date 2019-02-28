@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const ChildWrapper = styled.section`
-  display: block;
   background: white;
   `;
   const Skills = styled.ul`
@@ -11,11 +10,7 @@ const ChildWrapper = styled.section`
   const SkillItem = styled.li`
   border: none;
   list-style: none;
-  font-size: 1em;
-  `
-  const H1 = styled.h1`
-    color: black;
-    font-size: 1em;
+  font-size: 20px;
   `
 
 export default class SkillsUI extends Component {
@@ -37,7 +32,7 @@ export default class SkillsUI extends Component {
   render(){
     return <ChildWrapper>
       <Skills>
-      <H1>Tech Skills</H1>
+      <b>Tech Skills</b>
       {this.state.skills.map(item =>(
         <SkillItem key={item}>{item}</SkillItem>
       ))}

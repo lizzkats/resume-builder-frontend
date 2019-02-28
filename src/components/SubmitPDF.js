@@ -2,14 +2,11 @@ import React from "react";
 import styled from 'styled-components';
 
 const Button = styled.button`
-  display: inline-block;
   color: lightblue;
   font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
   border: 2px solid lightblue;
   border-radius: 3px;
-  display: block;
+  padding: 10px;
 `;
 
 export default class SubmitPDF extends React.Component {
@@ -30,7 +27,7 @@ export default class SubmitPDF extends React.Component {
         'Accept': 'application/json',
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({name: this.props.name, title: this.props.title})
+      body: JSON.stringify({name: this.props.name, title: this.props.title, website: this.props.website, phone: this.props.phone})
     }).then(response => {console.log(response.text())})
   }
 

@@ -2,16 +2,12 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const ChildWrapper = styled.section`
-  width: 15em;
-  padding: 15px;
   background: white;
   `;
 
 const BlurbText = styled.textarea`
     border: none;
-    font-size: 1em;
-    color: white;
-    background: aquamarine;
+    font-size: 15px;
     resize: none;
     border: none;
     overflow: hidden;
